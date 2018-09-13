@@ -25,6 +25,7 @@
 		76E45495AEB965518F5E8E27 /* Pods_MemeolistTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 944BD0AFF97A08EC8B3F287D /* Pods_MemeolistTests.framework */; };
 		7A0BA6CF212D94E1003055F0 /* CreateMemeController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7A0BA6CE212D94E1003055F0 /* CreateMemeController.graphql */; };
 		7A0BA6D1212D94E8003055F0 /* MemesListViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 7A0BA6D0212D94E8003055F0 /* MemesListViewController.graphql */; };
+		7A0BA6D721494A4F003055F0 /* AppComponents.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7A0BA6D621494A4F003055F0 /* AppComponents.swift */; };
 		88237365213684A400E07C2A /* CommentsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 88237364213684A400E07C2A /* CommentsTableViewController.swift */; };
 		882373672136997100E07C2A /* CommentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 882373662136997100E07C2A /* CommentsViewController.swift */; };
 		882373692136B08200E07C2A /* CommentsViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 882373682136B08200E07C2A /* CommentsViewController.graphql */; };
@@ -68,6 +69,7 @@
 		67EB0502C70202F5FE272F97 /* Pods_Memeolist.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Memeolist.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A0BA6CE212D94E1003055F0 /* CreateMemeController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CreateMemeController.graphql; sourceTree = "<group>"; };
 		7A0BA6D0212D94E8003055F0 /* MemesListViewController.graphql */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = MemesListViewController.graphql; sourceTree = "<group>"; };
+		7A0BA6D621494A4F003055F0 /* AppComponents.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppComponents.swift; sourceTree = "<group>"; };
 		82C712065C38FFA0E20F0896 /* Pods-Memeolist.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Memeolist.release.xcconfig"; path = "Pods/Target Support Files/Pods-Memeolist/Pods-Memeolist.release.xcconfig"; sourceTree = "<group>"; };
 		88237364213684A400E07C2A /* CommentsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsTableViewController.swift; sourceTree = "<group>"; };
 		882373662136997100E07C2A /* CommentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentsViewController.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 		01CF3BA420EBA7C20026EC7F /* Memeolist */ = {
 			isa = PBXGroup;
 			children = (
+				7A0BA6D521494A33003055F0 /* di */,
 				0110647420EE58E300547C63 /* service */,
 				01CF3BC720EBA8150026EC7F /* view */,
 				01CF3BA520EBA7C20026EC7F /* AppDelegate.swift */,
@@ -201,6 +204,14 @@
 				944BD0AFF97A08EC8B3F287D /* Pods_MemeolistTests.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		7A0BA6D521494A33003055F0 /* di */ = {
+			isa = PBXGroup;
+			children = (
+				7A0BA6D621494A4F003055F0 /* AppComponents.swift */,
+			);
+			path = di;
 			sourceTree = "<group>";
 		};
 		882373632136845200E07C2A /* comments */ = {
@@ -400,7 +411,6 @@
 				"${BUILT_PRODUCTS_DIR}/KTVJSONWebToken/KTVJSONWebToken.framework",
 				"${BUILT_PRODUCTS_DIR}/Kingfisher/Kingfisher.framework",
 				"${BUILT_PRODUCTS_DIR}/ObjcExceptionBridging/ObjcExceptionBridging.framework",
-				"${BUILT_PRODUCTS_DIR}/Starscream/Starscream.framework",
 				"${BUILT_PRODUCTS_DIR}/SwiftKeychainWrapper/SwiftKeychainWrapper.framework",
 				"${BUILT_PRODUCTS_DIR}/UIImageCropper/UIImageCropper.framework",
 				"${BUILT_PRODUCTS_DIR}/XCGLogger/XCGLogger.framework",
@@ -417,7 +427,6 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/KTVJSONWebToken.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Kingfisher.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ObjcExceptionBridging.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Starscream.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftKeychainWrapper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/UIImageCropper.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/XCGLogger.framework",
@@ -439,6 +448,7 @@
 				0110647620EE58FE00547C63 /* MemeService.swift in Sources */,
 				88237365213684A400E07C2A /* CommentsTableViewController.swift in Sources */,
 				0195B0E920F4E040000740E4 /* LoginViewController.swift in Sources */,
+				7A0BA6D721494A4F003055F0 /* AppComponents.swift in Sources */,
 				01CF3BA820EBA7C20026EC7F /* MemesListViewController.swift in Sources */,
 				01CF3BE020EBE63F0026EC7F /* GeneratedAPI.swift in Sources */,
 				01CF3BD820EBD0D90026EC7F /* MemesTableViewCell.swift in Sources */,

@@ -16,22 +16,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
         // create the authentication config
         let authenticationConfig = AuthenticationConfig(redirectURL: "memeolist://callback")
-        try! AgsAuth.instance.configure(authConfig: authenticationConfig)
-        if let transport = AgsSync.instance.transport {
-            transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
+        do {
+            try AgsAuth.instance.configure(authConfig: authenticationConfig)
+            if let transport = AgsSync.instance.transport {
+                transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
+            }
+            guard let _ = try! AgsAuth.instance.currentUser() else {
+                let rootViewController = LoginViewController()
+                window?.rootViewController = UINavigationController(rootViewController: rootViewController)
+                window?.makeKeyAndVisible()
+                return true
+            }
+        } catch AgsAuth.Errors.noServiceConfigurationFound {
+            print("No Auth configuration found.")
+        } catch {
+            print("Some other error.")
+            return false
         }
-        
-        guard let user = try! AgsAuth.instance.currentUser() else {
-            let rootViewController = LoginViewController()
-            window?.rootViewController = UINavigationController(rootViewController: rootViewController)
-            window?.makeKeyAndVisible()
-            return true
-        }
-        
-        createOrRetrieveProfile(user: user)
-        
         return true
-
     }
 
     func application(_ app: UIApplication, open url: URL, options: [UIApplicationOpenURLOptionsKey: Any] = [:]) -> Bool {
