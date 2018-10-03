@@ -10,7 +10,7 @@
       "type": "keycloak",
       "url": "https://keycloak.security.feedhenry.org/auth",
       "config": {
-        "auth-server-url": "https://keycloak.security.feedhenry.org/auth",
+          "auth-server-url": "https://keycloak.security.feedhenry.org/auth",
         "realm": "Memeolist",
         "resource": "ios-app",
         "ssl-required": "external",
@@ -21,7 +21,7 @@
         "id": "sync",
         "name": "sync",
         "type": "sync",
-        "url": "http://192.168.1.3:8000/graphql",
+        "url": "http://192.168.1.187:8000/graphql",
         "config": {
         }
     }]

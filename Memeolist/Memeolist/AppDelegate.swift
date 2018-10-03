@@ -30,8 +30,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
                 transport.headerProvider = AgsAuth.instance.getAuthHeaderProvider()
             }
 
-            guard let _ = try? AgsAuth.instance.currentUser() else {
-                return requireLogin()
+            try? AgsAuth.instance.currentUser(autoRefresh: true) { user, error in
+                if (user == nil) {
+                    self.requireLogin()
+                } else {
+                    self.createOrRetrieveProfile(user: user!)
+                }
             }
         } catch AgsAuth.Errors.noServiceConfigurationFound {
             print("No Auth configuration found.")
